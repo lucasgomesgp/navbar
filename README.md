@@ -4,6 +4,8 @@ Animated Navbar made with HTML5, CSS3 and Javascript, created for use in future 
 ## :art: Layout
 ![Navbar](assets/images/Navbar.png)
 
+## :desktop_computer: Presentation
+![Gif Navbar](assets/readme/navbar.gif)
 ## :paperclip: Technologies
 
 - **HTML5**
