@@ -7,17 +7,17 @@
 }
 
 body {
-  background: #CCCCCC;
+  background: #cccccc;
   width: 100%;
   height: 100vh;
 }
 
-body navbar {
+body .menu {
   background-color: #070242;
   width: 20%;
   height: 100vh;
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,10 +35,10 @@ body navbar {
   border-bottom-right-radius: 10px;
 }
 
-body navbar .back-menu {
-  background-color: #00C72C;
-  width: 40px;
-  height: 40px;
+body .menu .back-menu {
+  background-color: #00c72c;
+  width: 50px;
+  height: 50px;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,20 +51,11 @@ body navbar .back-menu {
           justify-content: center;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 4px;
   cursor: pointer;
 }
 
-body navbar .back-menu:hover {
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
-  -webkit-transition: -webkit-filter .4s;
-  transition: -webkit-filter .4s;
-  transition: filter .4s;
-  transition: filter .4s, -webkit-filter .4s;
-}
-
-body navbar .user-area {
+body .menu .user-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,21 +70,21 @@ body navbar .user-area {
   top: 10px;
 }
 
-body navbar .user-area .avatar {
+body .menu .user-area .avatar {
   width: 80px;
   height: 80px;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   border: 2px solid #000000;
   border-radius: 40px;
   text-align: center;
 }
 
-body navbar .user-area h1 {
+body .menu .user-area h1 {
   font-size: 20px;
 }
 
-body navbar .buttons-area .button {
-  background-color: #514E6A;
+body .menu .buttons-area .button {
+  background-color: #514e6a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,38 +93,39 @@ body navbar .buttons-area .button {
   margin: 20px;
   border-radius: 10px;
   cursor: pointer;
+  max-width: 100%;
 }
 
-body navbar .buttons-area .button:hover {
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
-  -webkit-transition: -webkit-filter .4s;
-  transition: -webkit-filter .4s;
-  transition: filter .4s;
-  transition: filter .4s, -webkit-filter .4s;
-}
-
-body navbar .buttons-area .button .icon {
+body .menu .buttons-area .button .icon {
   text-align: center;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   width: 50px;
   height: 50px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-body navbar .buttons-area .button .icon img {
+body .menu .buttons-area .button .icon img {
   margin-top: 5px;
 }
 
-body navbar .buttons-area .button h2 {
+body .menu .buttons-area .button h2 {
   font-size: 18px;
   letter-spacing: 2px;
   margin: auto;
 }
 
-body navbar .logout {
-  background-color: #B70505;
+body .menu .buttons-area .button:hover {
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+  -webkit-transition: -webkit-filter 0.4s;
+  transition: -webkit-filter 0.4s;
+  transition: filter 0.4s;
+  transition: filter 0.4s, -webkit-filter 0.4s;
+}
+
+body .menu .logout {
+  background-color: #b70505;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,35 +134,80 @@ body navbar .logout {
   margin: 20px;
   border-radius: 10px;
   cursor: pointer;
+  max-width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 }
 
-body navbar .logout:hover {
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
-  -webkit-transition: -webkit-filter .4s;
-  transition: -webkit-filter .4s;
-  transition: filter .4s;
-  transition: filter .4s, -webkit-filter .4s;
-}
-
-body navbar .logout .icon {
+body .menu .logout .icon {
   text-align: center;
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   width: 50px;
   height: 50px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-body navbar .logout .icon img {
+body .menu .logout .icon img {
   margin-top: 5px;
 }
 
-body navbar .logout h2 {
+body .menu .logout h2 {
   font-size: 18px;
   letter-spacing: 2px;
   margin: auto;
+}
+
+body .menu .logout:hover {
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+  -webkit-transition: -webkit-filter 0.4s;
+  transition: -webkit-filter 0.4s;
+  transition: filter 0.4s;
+  transition: filter 0.4s, -webkit-filter 0.4s;
+}
+
+@media screen and (max-width: 930px) {
+  body .menu {
+    position: initial;
+  }
+  body .menu .user-area {
+    display: none;
+  }
+  body .menu .buttons-area .button {
+    display: initial;
+  }
+  body .menu .buttons-area .button h2 {
+    display: none;
+  }
+  body .menu .buttons-area .button .icon {
+    border-radius: 10px;
+    background-color: #7e79a5;
+  }
+  body .menu .buttons-area .button .icon:hover {
+    -webkit-filter: brightness(2);
+            filter: brightness(2);
+    -webkit-transition: -webkit-filter 0.4s;
+    transition: -webkit-filter 0.4s;
+    transition: filter 0.4s;
+    transition: filter 0.4s, -webkit-filter 0.4s;
+  }
+  body .menu .logout {
+    position: unset;
+    width: 50px;
+  }
+  body .menu .logout h2 {
+    display: none;
+  }
+  body .menu .logout .icon {
+    border-radius: 10px;
+    background-color: #b70505;
+  }
+}
+
+@media screen and (max-width: 298px) {
+  body .menu {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

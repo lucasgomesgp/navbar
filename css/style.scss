@@ -5,59 +5,58 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    background: #CCCCCC;
+    background: #cccccc;
     width: 100%;
     height: 100vh;
 
-    navbar{
+    .menu {
         background-color: #070242;
         width: 20%;
         height: 100vh;
         position: fixed;
-        color: #FFFFFF;
+        color: #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border-top-right-radius:10px;
+        border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
 
-        .back-menu{
-            background-color: #00C72C;
-            width: 40px;
-            height: 40px;
+        .back-menu {
+            background-color: #00c72c;
+            width: 50px;
+            height: 50px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: absolute;
             top: 10px;
-            left: 10px; 
-            cursor: pointer;           
-            @include brightness();
-
+            left: 4px;
+            cursor: pointer;
         }
 
-        .user-area{
+        .user-area {
             display: flex;
             flex-direction: column;
             align-items: center;
             position: absolute;
             top: 10px;
-            .avatar{
+
+            .avatar {
                 width: 80px;
                 height: 80px;
-                background-color: #C4C4C4;
+                background-color: #c4c4c4;
                 border: 2px solid #000000;
                 border-radius: 40px;
                 text-align: center;
             }
-            
-            h1{
+
+            h1 {
                 font-size: 20px;
             }
         }
-        @mixin button($bgButton: #514E6A){
+        @mixin button($bgButton: #514e6a) {
             background-color: $bgButton;
             display: flex;
             width: 180px;
@@ -65,42 +64,90 @@ body {
             margin: 20px;
             border-radius: 10px;
             cursor: pointer;
+            max-width: 100%;
 
             .icon {
                 text-align: center;
-                background-color: #C4C4C4;
+                background-color: #c4c4c4;
                 width: 50px;
                 height: 50px;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
-                img{
+                img {
                     margin-top: 5px;
                 }
             }
 
-            h2{
+            h2 {
                 font-size: 18px;
                 letter-spacing: 2px;
                 margin: auto;
             }
         }
-        @mixin brightness(){
-            &:hover{
+        @mixin brightness() {
+            &:hover {
                 filter: brightness(1.4);
-                transition: filter .4s;
+                transition: filter 0.4s;
             }
         }
-        .buttons-area{
-            .button{
+        .buttons-area {
+            .button {
                 @include button();
-               @include brightness();
+                @include brightness();
             }
         }
-        .logout{
-            @include button($bgButton: #B70505);
+        .logout {
+            @include button($bgButton: #b70505);
             @include brightness();
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 930px) {
+    body {
+        .menu {
+            position: initial;
+            .user-area {
+                display: none;
+            }
+            .buttons-area{
+                .button{
+                    display: initial;
+
+                    h2{
+                        display: none;
+                    }
+                    .icon{
+                        border-radius: 10px;
+                        background-color: #7e79a5;
+
+                        &:hover {
+                            filter: brightness(2);
+                            transition: filter 0.4s;
+                        }
+                    }
+                }
+            }
+            .logout{
+                position: unset;
+                width: 50px;
+                h2{
+                    display: none;
+                }
+                .icon{
+                    border-radius: 10px;
+                    background-color: #b70505;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 298px){
+    body{
+        .menu{
+            display: none;
         }
     }
 }
