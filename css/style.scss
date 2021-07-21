@@ -21,8 +21,9 @@ body {
         flex-direction: column;
         border-top-right-radius:10px;
         border-bottom-right-radius: 10px;
+
         .back-menu{
-            background-color: #576A4E;
+            background-color: #00C72C;
             width: 40px;
             height: 40px;
             border-radius: 10px;
@@ -31,13 +32,18 @@ body {
             justify-content: center;
             position: absolute;
             top: 10px;
-            left: 10px;            
+            left: 10px; 
+            cursor: pointer;           
+            @include brightness();
+
         }
+
         .user-area{
             display: flex;
             flex-direction: column;
             align-items: center;
-            
+            position: absolute;
+            top: 10px;
             .avatar{
                 width: 80px;
                 height: 80px;
@@ -57,13 +63,16 @@ body {
             width: 180px;
             height: 50px;
             margin: 20px;
+            border-radius: 10px;
+            cursor: pointer;
 
             .icon {
                 text-align: center;
                 background-color: #C4C4C4;
                 width: 50px;
                 height: 50px;
-                
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
                 img{
                     margin-top: 5px;
                 }
@@ -75,13 +84,23 @@ body {
                 margin: auto;
             }
         }
+        @mixin brightness(){
+            &:hover{
+                filter: brightness(1.4);
+                transition: filter .4s;
+            }
+        }
         .buttons-area{
             .button{
                 @include button();
+               @include brightness();
             }
         }
         .logout{
             @include button($bgButton: #B70505);
+            @include brightness();
+            position: absolute;
+            bottom: 0px;
         }
     }
 }
